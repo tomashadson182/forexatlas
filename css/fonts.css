@@ -1,0 +1,18 @@
+﻿
+@font-face {
+    font-family: 'PFDinTextCompProThin';
+    src: url('../fonts/pfdintextcomppro-thin.eot');
+    src: url('../fonts/pfdintextcomppro-thin.eot') format('embedded-opentype'),
+         url('../fonts/pfdintextcomppro-thin.woff') format('woff'),
+         url('../fonts/pfdintextcomppro-thin.ttf') format('truetype'),
+         url('../fonts/pfdintextcomppro-thin.svg#PFDinTextCompProThin') format('svg');
+}
+
+@font-face {
+    font-family: 'PFDinTextCompProRegular';
+    src: url('../fonts/pfdintextcomppro-regular.eot');
+    src: url('../fonts/pfdintextcomppro-regular.eot') format('embedded-opentype'),
+         url('../fonts/pfdintextcomppro-regular.woff') format('woff'),
+         url('../fonts/pfdintextcomppro-regular.ttf') format('truetype'),
+         url('../fonts/pfdintextcomppro-regular.svg#PFDinTextCompProRegular') format('svg');
+}
