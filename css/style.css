@@ -115,7 +115,7 @@ img{
 /* Middle
 -----------------------------------------------------------------------------*/
 .content {
-	padding: 0 20px 160px 20px;
+	padding: 0 20px 40px 20px;
 	height:100%;
 }
 .content  .banner{
@@ -142,9 +142,9 @@ img{
 -----------------------------------------------------------------------------*/
 .footer {
 	width: 1000px;
-	margin: -160px auto 0;
-	height: 160px;
-	padding:0 20px;
+	margin: -40px auto 0;
+	height: 40px;
+	padding:20px;
 	background: #242424;
 	position: relative;
 	color:#fff;
