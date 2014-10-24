@@ -218,20 +218,21 @@ img{
 }
 .footer .bottom{
 	float:left;
-	width:400px;
+	width:700px;
 }
 .footer .bottom p{
-	color:#99c81d;
+	/*color:#99c81d;*/
+	color: white;
 	font-style:italic;
-	font: 19px "Trebuchet MS";
+	font: 10px "Trebuchet MS";
 	margin-bottom:12px;
 }
-.footer .bottom a{
+.footer .bottom a, .footer .top a{
 	color:#00cfff;
 	font: 14px "Trebuchet MS";
 	float:left;
 }
-.footer .bottom a:hover{
+.footer .bottom a:hover, .footer .top a:hover{
 	text-decoration:none;
 }
 .footer .social{
