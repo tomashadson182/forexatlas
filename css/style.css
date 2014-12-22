@@ -360,6 +360,7 @@ table tbody tr td:nth-child(8) a:hover{
 	font-size:14px;
 	height:100%;
 	overflow:hidden;
+
 }
 .bottom-block .text h3{
 	font-size:36px;
@@ -447,7 +448,7 @@ table tbody tr td:nth-child(8) a:hover{
 		background: linear-gradient(to bottom, #ddb605, #ffde21);
 }
 .bottom-block .text{
-	margin-top: 40px;
+	margin: 40px 0;
 }
 .banner2{
 	float:left;
