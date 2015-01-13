@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('.rf').each(function(){
         var form = $(this);
-        var btn = form.find('.submit');        
+        var btn = form.find('.submit');
 
         form.find('.rfield').each(function(){
             $(this).addClass('empty-filed'); //пустое
@@ -16,13 +16,13 @@ $(document).ready(function(){
                     $(this).addClass('empty-filed');
                 }
             });
-            
+
             form.find('#phone').each(function(){
             	var intg = $(this).val();
         		var phoneLngth = intg.length;
         		var re = /^[-\+\s\(\)0-9]*$/;  //для телефона (цифры, пробелы, скобки, плюсы. дефисы)
         		if( !re.test(intg)) {
-           			 $(this).addClass('empty-filed');          
+           			 $(this).addClass('empty-filed');
 
         		}
         		else if (phoneLngth <= 5) {
@@ -30,8 +30,8 @@ $(document).ready(function(){
         		}
         		else{
         			$(this).removeClass('empty-filed');
-        		}           	
-            });       
+        		}
+            });
         }
 
         form.find('.rfield').bind('focusout',function(){
@@ -53,7 +53,7 @@ $(document).ready(function(){
         setInterval(function(){
             checkInput();
             var sizeEmpty = form.find('.empty-filed').size();
-			console.log(sizeEmpty);
+			//console.log(sizeEmpty);
             if (sizeEmpty > 0){
                 if (btn.hasClass('disabled')){
                 	return false;
@@ -70,20 +70,20 @@ $(document).ready(function(){
         btn.click(function(e){
             if ($(this).hasClass('disabled')) {
                 lightEmpty();
-                return false;                
+                return false;
             }
             else{
             	e.preventDefault();
                 form.submit(function(e){
                 	e.preventDefault();
                 	f=form.serialize();
-                    $.post('/mail.php', $('.rf').serialize(), function(){ 
+                    $.post('/mail.php', $('.rf').serialize(), function(){
 						$('.popup.success').show();
-       			 	});	
+       			 	});
                 });
                 form.submit();
                 $('.popup').hide();
-                form.find('.rfield').val('').change();               
+                form.find('.rfield').val('').change();
             }
         });
     });
@@ -105,6 +105,26 @@ $(document).ready(function(){
         }
     });
 
+});
+
+
+$(function(){
+  var partner_stf = getParameterByName('p');
+
+  function getParameterByName(name) {
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+          results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+  if (partner_stf) {
+    console.log(partner_stf);
+    $('a').each(function(){
+      var link = $(this).attr('href');
+      link = link.replace('\/p959','\/p'+partner_stf);
+      $(this).attr('href',link);
+    })
+  }
 });
 
 
