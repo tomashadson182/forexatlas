@@ -110,6 +110,7 @@ $(document).ready(function(){
 
 $(function(){
   var partner_stf = getParameterByName('p');
+  var subid_stf = getParameterByName('ps');
 
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -117,21 +118,19 @@ $(function(){
           results = regex.exec(location.search);
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-  if (partner_stf) {
-    console.log(partner_stf);
+
+if (partner_stf) {
     $('a').each(function(){
       var link = $(this).attr('href');
-      link = link.replace('\/p959','\/p'+partner_stf);
+      if(subid_stf){
+        link = link.replace('\/p959','\/p'+partner_stf+'\/'+subid_stf);
+      }
+      else{
+        link = link.replace('\/p959','\/p'+partner_stf);
+      }
       $(this).attr('href',link);
     })
   }
-});
-
-
-
-
-
-
 
 
 
