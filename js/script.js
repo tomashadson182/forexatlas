@@ -119,18 +119,19 @@ $(function(){
       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
   }
 
-if (partner_stf) {
-    $('a').each(function(){
-      var link = $(this).attr('href');
-      if(subid_stf){
-        link = link.replace('\/p959','\/p'+partner_stf+'\/'+subid_stf);
-      }
-      else{
-        link = link.replace('\/p959','\/p'+partner_stf);
-      }
-      $(this).attr('href',link);
-    })
-  }
+    if (partner_stf) {
+        $('a').each(function(){
+          var link = $(this).attr('href');
+          if(subid_stf){
+            link = link.replace('\/p959','\/p'+partner_stf+'\/'+subid_stf);
+          }
+          else{
+            link = link.replace('\/p959','\/p'+partner_stf);
+          }
+          $(this).attr('href',link);
+        })
+    }
+});
 
 
 
