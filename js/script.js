@@ -111,6 +111,7 @@ $(document).ready(function(){
 $(function(){
   var partner_stf = getParameterByName('p');
   var subid_stf = getParameterByName('ps');
+  var landing = getParameterByName('lp');
 
   function getParameterByName(name) {
       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -129,6 +130,13 @@ $(function(){
             link = link.replace('\/p959','\/p'+partner_stf);
           }
           $(this).attr('href',link);
+        })
+    }
+    if (landing) {
+        $('a').each(function(){
+          var land = $(this).attr('href');
+          land = land.replace('\/stp\/','\/'+landing+'\/');
+          $(this).attr('href',land);
         })
     }
 });
