@@ -53,7 +53,6 @@ $(document).ready(function(){
         setInterval(function(){
             checkInput();
             var sizeEmpty = form.find('.empty-filed').size();
-			//console.log(sizeEmpty);
             if (sizeEmpty > 0){
                 if (btn.hasClass('disabled')){
                 	return false;
@@ -107,39 +106,6 @@ $(document).ready(function(){
 
 });
 
-
-$(function(){
-  var partner_stf = getParameterByName('p');
-  var subid_stf = getParameterByName('ps');
-  var landing = getParameterByName('lp');
-
-  function getParameterByName(name) {
-      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-          results = regex.exec(location.search);
-      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-  }
-
-    if (partner_stf) {
-        $('a').each(function(){
-          var link = $(this).attr('href');
-          if(subid_stf){
-            link = link.replace('\/p959','\/p'+partner_stf+'\/'+subid_stf);
-          }
-          else{
-            link = link.replace('\/p959','\/p'+partner_stf);
-          }
-          $(this).attr('href',link);
-        })
-    }
-    if (landing) {
-        $('a').each(function(){
-          var land = $(this).attr('href');
-          land = land.replace('\/stp\/','\/'+landing+'\/');
-          $(this).attr('href',land);
-        })
-    }
-});
 
 
 
